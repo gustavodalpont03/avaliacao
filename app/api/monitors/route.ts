@@ -1,5 +1,4 @@
-import { getAllStudent } from "@/app/model/StudentService";
-import { getAllMonitor } from "@/app/model/MonitorService";
+import { getAllMonitor, addMonitors } from "@/app/model/MonitorService";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -8,7 +7,10 @@ export async function GET() {
     console.log()
 }
 
-export async function POST() {
+export async function POST(request: Request) {
     console.log("Acessou POST")
+    const monitors = await request.json();
+    console.log(monitors);
+    addMonitors(monitors.name, monitors.email);
     return NextResponse.json({sucess:"ok"});
 }
