@@ -8,9 +8,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-    console.log("Acessou POST")
     const monitors = await request.json();
-    console.log(monitors);
     addMonitors(monitors.name, monitors.email);
     return NextResponse.json({sucess:"ok"});
 }
