@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 export async function GET() {
     const monitors = await getAllMonitor();
     return NextResponse.json(monitors);
-    console.log()
 }
 
 export async function POST(request: Request) {
