@@ -1,4 +1,22 @@
-export default async function EditMonitor(){
+import { deleteMonitors, getMonitorById, updateMonitorById } from "@/app/model/MonitorService";
+import {redirect} from 'next/navigation'
+
+export default async function EditMonitor(params:any){
+    const id = params.searchParams.id;
+    const student = await getMonitorById(id)
+
+    async function deleteMonitor(){
+        'use server';
+        await deleteMonitors(id)
+        redirect('/admin/student')
+    }
+    async function updateMonitor(formData: FormData){
+        'use server'
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        await updateMonitorById(id, name, email)
+        redirect('/admin/monitor')
+    }
     return(
         <>
         <h1>Editar Monitores</h1>
