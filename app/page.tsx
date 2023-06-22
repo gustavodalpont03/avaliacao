@@ -1,3 +1,8 @@
+import Image from 'next/image'
+
 export default function Page() {
-  return <h1>Hello, Home page!</h1>;
+  return (
+    <h2 className = 'text-center mt-16 bg-blue-500'> Home From Valdecir </h2>
+  )
+
 }
