@@ -1,7 +1,5 @@
-import Aside from "../components/aside"
-import Nav from "../components/nav"
-import Footer from "../components/footer"
-import React from "react"
+import Aside from "@/app/components/aside"
+import Nav from "@/app/components/nav"
 
 export default function RootLayout({
   children,
@@ -10,17 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <div className="md:container md:mx-auto">
-      <Nav />
-      <div className="flex">
-        <Aside />
-        <div className="w-full">
-          {children}
+            <Nav />
+            <div className="flex">
+                <Aside />
+                <div className="w-full">
+                    {children}
+                </div>
+            </div>
         </div>
-      </div>
-      <div className="w-full">
-        <Footer />        
-      </div>
-
-    </div>
   )
 }

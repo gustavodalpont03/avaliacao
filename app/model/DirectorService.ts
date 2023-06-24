@@ -5,8 +5,8 @@ export async function getAllDirector() {
     return directors
     
 }
-export async function addDirector(name:string, description:string) {
-    await sql`INSERT INTO director(name, description) VALUES (${name}, ${description})`;
+export async function addDirector(name:string, email:string) {
+    await sql`INSERT INTO director(name, email) VALUES (${name}, ${email})`;
     
 }
 export async function deleteDirectorById(id:string) {
