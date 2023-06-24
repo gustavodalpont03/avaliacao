@@ -12,7 +12,7 @@ export async function GET(request:Request, {params}:any) {
 export async function PUT(request:Request, {params}:any) { 
     try{
     const monitor = await request.json()   
-    await updateMonitorById(params.id, monitor.name, monitor.description) 
+    await updateMonitorById(params.id, monitor.name, monitor.email) 
     return NextResponse.json (await getMonitorById(params.id));
     } catch (error){
         console.log ("PUT" + error)

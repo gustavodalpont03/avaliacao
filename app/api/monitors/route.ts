@@ -8,6 +8,6 @@ export async function GET(){
 export async function POST(request:Request){        
         const monitor= await request.json()
         console.log(monitor)
-        addMonitor(monitor.name, monitor.description)
+        addMonitor(monitor.name, monitor.email)
         return NextResponse.json({sucess:"ok"})
 }

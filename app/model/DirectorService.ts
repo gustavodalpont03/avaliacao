@@ -17,6 +17,6 @@ export async function getDirectorById(id:string) {
    const {rows:directors} = await sql`SELECT * FROM director WHERE id=(${id})`
    return directors[0]
 }
-export async function updateDirectorById(id:string, name:string, description:string) {
-    await sql `UPDATE director SET name=${name}, description =${description} WHERE id=${id}`
+export async function updateDirectorById(id:string, name:string, email:string) {
+    await sql `UPDATE director SET name=${name}, email =${email} WHERE id=${id}`
  }
